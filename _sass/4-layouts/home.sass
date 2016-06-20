@@ -14,6 +14,8 @@ header.header
       margin-left: 0.05em
       font-weight: 700
       color: $color-primary
+      position: relative
+
   &#resultado
     margin-top: 0.5em
   nav 
@@ -45,46 +47,47 @@ header.header
         &.active
           &:before
             $tFelchita: 1.8em
-            @include triangle($tFelchita, $color-quaternary, down);
+            @include triangle($tFelchita, $color-quaternary, down)
             content: ''
             left: 50%
             margin-left: -$tFelchita/2
             position: absolute
             top: 100%
         &.proximamente
-          $tFelchita: 1.8em 
+          $tFelchita: 1.8rem 
           position: relative
-          &:after
-            background: $color-primary
-            border-radius: 0.25em
-            color: $color-initial
-            content: 'próximamente'
-            display: none
-            left: 50%
-            margin-left: -65px
-            padding: 0.5em 0.5em
-            position: absolute
-            top: 4em
-            width: 130px
-          &:before
-            @include triangle($tFelchita, $color-primary, up);
-            content: ''
-            display: none
-            left: 50%
-            margin-left: -$tFelchita/2
-            position: absolute
-            top: 100%
-        &:hover,
-        &:focus
-          &:after,
-          &:before
-            display: block
+          a
+            &:after
+              background: $color-primary
+              border-radius: 0.25em
+              color: $color-initial
+              content: 'próximamente'
+              display: none
+              left: 50%
+              line-height: 2.8em
+              margin-left: -50px
+              font-size: 1.2rem
+              position: absolute
+              top: 5.4rem
+              width: 100px
+            &:before
+              @include triangle($tFelchita, $color-primary, up);
+              content: ''
+              display: none
+              left: 50%
+              margin-left: -$tFelchita/2
+              position: absolute
+              top: 100%
         a
           line-height: 1.8em
           font-size: 1.8em
           &:hover,
           &:focus
             text-decoration: none
+            color: $color-secondary
+            &:after,
+            &:before
+              display: block
 main.wrapper
   @include linear-gradient(to top, darken($color-initial, 5), $color-initial)
   margin: 0
@@ -110,13 +113,24 @@ main.wrapper
       font-size: 1.2em
       margin-bottom: 1em
       min-height: initial
-    .label,p 
+    .label,
+    .total
       text-align: center
     .total
       color: $color-primary
-      font-size: 3em
+      font-size: 3rem
+
+  .cont-pres
+    input[type=number] 
+      appearance: textfield
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button  
+      appearance: none
+      margin: 0
+
   .cont-resulpres
     display: none
+
   p.atras
     line-height: 4rem
     display: block
@@ -127,6 +141,7 @@ main.wrapper
       font-size: 2em
       >span
         margin: 0.2em 
+        color: $color-secondary
       &:hover,
       &:focus
         text-decoration: none
@@ -135,7 +150,7 @@ main.wrapper
 footer.yo
   background: darken($color-primary, 10)
   color: $color-quaternary
-  font-size: 1rem
+  font-size: 1.2rem
   line-height: 2.5rem
   margin: 0
   position: relative
@@ -145,7 +160,8 @@ footer.yo
   p 
     margin: 0
   a
-    color: $color-quaternary
+    color: lighten($color-quaternary, 10)
     &:hover
       color: $color-initial
+      text-transform: uppercase
       text-decoration: none

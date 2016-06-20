@@ -23,13 +23,13 @@ block body
 		form.cont-pres
 			.label
 				label(for="parcial1") 1er parcial :
-				input(type="text",name="parcial1",id="val1",placeholder="100")
+				input(type="number",name="parcial1",id="val1",placeholder="nota",min="0",max="100",autocomplete="off")
 			.label
 				label(for="parcial2") 2do parcial :
-				input(type="text",name="parcial2",id="val2",placeholder="100")
+				input(type="number",name="parcial2",id="val2",placeholder="nota",min="0",max="100",autocomplete="off")
 			.label
 				label(for="parcial3") 3er parcial :
-				input(type="text",name="parcial3",id="val3",placeholder="100")
+				input(type="number",name="parcial3",id="val3",placeholder="nota",min="0",max="100",autocomplete="off")
 			.btn
 				input(type="submit",id="submit",value="verificar")
 	footer.yo
