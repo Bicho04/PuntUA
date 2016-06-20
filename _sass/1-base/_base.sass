@@ -1,0 +1,38 @@
+
+// Selection colors (easy to forget)
+
+::selection
+  background: $color-selection
+
+::-moz-selection
+  background: $color-selection
+
+img::selection
+  background: transparent
+
+img::-moz-selection
+  background: transparent
+
+body
+  -webkit-tap-highlight-color: $color-selection
+
+// Basic Styles
+html 
+  box-sizing: border-box
+  font-size: 62.5%
+
+body 
+  color: $color-text
+  font-family: $font-family
+  font-size: 1.4em
+  font-weight: 300
+  letter-spacing: .01em
+  line-height: 1.2
+
+
+// Box Sizing FTW
+*,
+*:after,
+*:before 
+  box-sizing: border-box
+
