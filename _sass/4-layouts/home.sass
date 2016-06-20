@@ -14,6 +14,8 @@ header.header
       margin-left: 0.05em
       font-weight: 700
       color: $color-primary
+      position: relative
+
   &#resultado
     margin-top: 0.5em
   nav 
@@ -45,7 +47,7 @@ header.header
         &.active
           &:before
             $tFelchita: 1.8em
-            @include triangle($tFelchita, $color-quaternary, down);
+            @include triangle($tFelchita, $color-quaternary, down)
             content: ''
             left: 50%
             margin-left: -$tFelchita/2
@@ -111,13 +113,24 @@ main.wrapper
       font-size: 1.2em
       margin-bottom: 1em
       min-height: initial
-    .label
+    .label,
+    .total
       text-align: center
     .total
       color: $color-primary
-      font-size: 3em
+      font-size: 3rem
+
+  .cont-pres
+    input[type=number] 
+      appearance: textfield
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button  
+      appearance: none
+      margin: 0
+
   .cont-resulpres
     display: none
+
   p.atras
     line-height: 4rem
     display: block
@@ -128,6 +141,7 @@ main.wrapper
       font-size: 2em
       >span
         margin: 0.2em 
+        color: $color-secondary
       &:hover,
       &:focus
         text-decoration: none
