@@ -15,7 +15,7 @@ input[type='submit'] {
 	cursor: pointer;
 	display: block;
 	font-size: 1.8rem;
-	font-weight: 700;
+	font-weight: 400;
 	height: 4rem;
 	letter-spacing: 0.1rem;
 	line-height: 3.8rem;
@@ -23,7 +23,7 @@ input[type='submit'] {
 	padding: 0 2rem;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
+	// text-transform: uppercase;
 	white-space: nowrap;
 
 	&:hover,
