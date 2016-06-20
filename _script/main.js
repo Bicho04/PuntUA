@@ -38,7 +38,7 @@ $(document).ready(function() {
     return'T. parciales: <strong class="nota">' + ((num1+num2)/2*valorNotaParcial).toFixed(0) +'</strong>%';
   };
 
-  $("input[type='text']").blur(function(){
+  $("input[type='number']").blur(function(){
     if($(this).val() == "" || isNaN($(this).val()) || $(this).val() > 100 || $(this).val() < 1){
       $(this).addClass('error');
       $(this).val(0);
@@ -47,8 +47,8 @@ $(document).ready(function() {
     }
   });
 
-  $('#submit').click(function() {
-    event.preventDefault();
+  $('#submit').click(function(e) {
+    e.preventDefault();
 
     var n1 = parseInt($('#val1').val());
     var n2 = parseInt($('#val2').val());
@@ -73,16 +73,16 @@ $(document).ready(function() {
     $('#para2').html(pct_faltantes(2,65));
 
     if (parseInt($('#resultado .nota').html()) == 0) {
-      $('input[type="text"]').addClass('error');
+      $('input[type="number"]').addClass('error');
     }else{
-      $('.cont-pres').fadeToggle("slow");
-      $('.cont-resulpres').fadeToggle("slow");
+      $('.cont-pres').fadeToggle(2000);
+      $('.cont-resulpres').fadeToggle(2000);
     }
   });
 
   $('#atras').click(function() {
-    $('.cont-pres').fadeToggle("slow");
-    $('.cont-resulpres').fadeToggle("slow");
+    $('.cont-pres').fadeToggle(1000);
+    $('.cont-resulpres').fadeToggle(1000);
   });
 
 });
