@@ -7,7 +7,9 @@ $(document).ready(function() {
     function faltante() {
       return ((ptMin - $('#resultado .nota').html()) /valorNotaFinal).toFixed(0)
     };
-    if(faltante() > 120){
+    if(faltante() > 130){
+      return 'para ' + nota + ' 😣'
+    }else if(faltante() > 120){
       return 'si deberías sacar ' + nota +' ni la virgen te salva'
     }else if(faltante() > 103){
       return 'si querías sacar ' + nota +' PERDEU'
